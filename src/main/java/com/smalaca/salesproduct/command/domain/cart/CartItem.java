@@ -1,6 +1,7 @@
 package com.smalaca.salesproduct.command.domain.cart;
 
 import java.util.Objects;
+import com.smalaca.salesproduct.command.domain.amount.Amount;
 
 class CartItem {
     private final String productCode;

@@ -9,7 +9,7 @@ public class OfferApplicationFacade {
 
     private final OfferRepository offerRepository;
 
-    private final
+//    private final
 
     void present(PresentOfferDto presentOfferDto) {
         // translate input into ubiquitous language (0...*)
@@ -18,7 +18,7 @@ public class OfferApplicationFacade {
 
 
         // save the result (0/1...*)
-        offerRepository.save();
+//        offerRepository.save();
     }
 
 }
