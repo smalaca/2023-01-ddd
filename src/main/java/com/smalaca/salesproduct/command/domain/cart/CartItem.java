@@ -9,6 +9,7 @@ public class CartItem {
         this.amount = amount;
     }
 
+
     public static CartItem create(String productCode, Integer amount) {
         return new CartItem(productCode, Amount.create(amount));
     }
