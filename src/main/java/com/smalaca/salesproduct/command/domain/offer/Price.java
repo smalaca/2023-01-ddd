@@ -15,6 +15,15 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 class Price {
 
+    static final Price ZERO = new Price(BigDecimal.ZERO);
+
     private final BigDecimal value;
 
+    public Price multiply(Integer multiplier) {
+        return new Price(value.multiply(BigDecimal.valueOf(multiplier)));
+    }
+
+    public Price add(Price price) {
+        return new Price(value.add(price.value));
+    }
 }
