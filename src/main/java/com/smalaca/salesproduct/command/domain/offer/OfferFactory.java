@@ -1,6 +1,9 @@
 package com.smalaca.salesproduct.command.domain.offer;
 
-import java.math.BigDecimal;
+import com.smalaca.salesproduct.command.domain.amount.Amount;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class OfferFactory {
@@ -12,12 +15,17 @@ public class OfferFactory {
         Discount discount = discountService.calculate(couponCode);
         Map<String, Price> productsToPrices = productManagementService.getPrice(products.keySet());
         Price sum = Price.ZERO;
+        List<OfferItem> items = new ArrayList<>();
         for (Map.Entry<String, Price> entry : productsToPrices.entrySet()) {
             String code = entry.getKey();
             Price price = entry.getValue();
-            sum = sum.add(price.multiply(products.get(code)));
+            Integer amount = products.get(code);
+            sum = sum.add(price.multiply(amount));
+
+            OfferItem item = new OfferItem(code, Amount.create(amount), price);
+            items.add(item);
         }
 
-        new Offer(deliveryMethod, discount);
+        return new Offer(deliveryMethod, discount, items, sum);
     }
 }
