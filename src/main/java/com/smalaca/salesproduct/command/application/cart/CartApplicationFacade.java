@@ -1,12 +1,10 @@
 package com.smalaca.salesproduct.command.application.cart;
 
-import ch.qos.logback.core.spi.AbstractComponentTracker;
 import com.smalaca.salesproduct.command.domain.cart.Cart;
 import com.smalaca.salesproduct.command.domain.cart.CartRepository;
 import com.smalaca.salesproduct.command.domain.cart.FooBar;
 
 import java.util.List;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class CartApplicationFacade {
@@ -26,7 +24,9 @@ public class CartApplicationFacade {
                 .collect(Collectors.toList());
 
         // execute method from domain (1)
+        cart.add(fooBar);
 
         // save the result (0/1...*)
+        cartRepository.save(cart);
     }
 }

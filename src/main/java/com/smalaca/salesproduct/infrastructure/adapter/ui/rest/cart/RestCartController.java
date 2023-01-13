@@ -1,6 +1,5 @@
 package com.smalaca.salesproduct.infrastructure.adapter.ui.rest.cart;
 
-import com.smalaca.salesproduct.command.application.cart.AddProductsDto;
 import com.smalaca.salesproduct.command.application.cart.CartApplicationFacade;
 
 import javax.validation.Valid;
