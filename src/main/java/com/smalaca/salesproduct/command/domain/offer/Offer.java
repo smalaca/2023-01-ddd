@@ -1,12 +1,15 @@
 package com.smalaca.salesproduct.command.domain.offer;
 
+import lombok.AllArgsConstructor;
+
 import java.util.List;
 
+@AllArgsConstructor
 public class Offer {
 
-    private DeliveryMethod deliveryMethod;
-    private Discount discount;
-    private List<OfferItem> offerItems;
-    private Price price;
+    private final DeliveryMethod deliveryMethod;
+    private final Discount discount;
+    private final List<OfferItem> offerItems;
+    private final Price price;
 
 }
