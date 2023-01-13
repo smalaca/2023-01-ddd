@@ -1,15 +1,21 @@
 package com.smalaca.salesproduct.command.domain.cart;
 
-public class CartItem {
-    private final String productCode;
-    private final Amount amount;
+import java.util.Objects;
 
-    private CartItem(String productCode, Amount amount) {
+class CartItem {
+    private final String productCode;
+    private Amount amount;
+
+    CartItem(String productCode, Amount amount) {
         this.productCode = productCode;
         this.amount = amount;
     }
 
-    public static CartItem create(String productCode, Integer amount) {
-        return new CartItem(productCode, Amount.create(amount));
+    boolean isFor(String productCode) {
+        return Objects.equals(this.productCode, productCode);
+    }
+
+    void add(Amount amount) {
+        this.amount = this.amount.add(amount);
     }
 }

@@ -13,4 +13,8 @@ class Amount {
         }
         return new Amount(amount);
     }
+
+    Amount add(Amount amount) {
+        return Amount.create(value + amount.value);
+    }
 }
