@@ -6,11 +6,13 @@
  */
 package com.smalaca.salesproduct.command.domain.offer;
 
-import java.util.Map;
+import java.util.Set;
 
 /**
- * @author Tomasz Krygier
+ * @author Kamil Fiutek
  */
-interface ProductManagementService {
-    Map<String, Price> getPriceOfAvailableProducts(Map<String, Integer> products);
+class NotAllProductsAvailableException extends RuntimeException {
+    public NotAllProductsAvailableException(Set<String> keySet, Set<String> keySet1) {
+
+    }
 }
