@@ -8,7 +8,7 @@ import lombok.RequiredArgsConstructor;
 @Getter
 @RequiredArgsConstructor
 public class PresentOfferDto {
-    private final DeliveryMethod deliveryMethod;
+    private final String deliveryMethod;
     private final String couponCode;
     private final Map<String, Integer> products;
 }

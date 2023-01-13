@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
-public class Discount {
+class Discount {
 
     private final BigDecimal value;
 
