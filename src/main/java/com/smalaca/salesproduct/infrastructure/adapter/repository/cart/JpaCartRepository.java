@@ -19,6 +19,11 @@ public class JpaCartRepository implements CartRepository {
         return cartFromSessionFor(customerId);
     }
 
+    @Override
+    public void save(Cart cart) {
+
+    }
+
     private boolean isCustomerAuthenticated(UUID customerId) {
         return false;
     }
