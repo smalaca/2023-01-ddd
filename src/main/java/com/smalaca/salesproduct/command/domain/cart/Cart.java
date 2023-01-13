@@ -12,9 +12,9 @@ public class Cart {
     @Id
     @GeneratedValue
     private UUID id;
-    private List<FooBar> fooBars = new ArrayList<>();
+    private List<CartItem> cartItems = new ArrayList<>();
 
-    public void add(List<FooBar> fooBar) {
-        fooBars.addAll(fooBar);
+    public void add(List<CartItem> cartItem) {
+        cartItems.addAll(cartItem);
     }
 }
